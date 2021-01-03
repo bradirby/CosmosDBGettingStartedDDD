@@ -11,9 +11,11 @@ namespace CosmosDbRepository
     public abstract class BaseCosmosDBRepository<T> where T:class, new()
     {
         protected Container container { get; set; }
+        protected ICosmosDbRepositoryLogger Logger;
 
-        protected BaseCosmosDBRepository(Container cosmosContainer)
+        protected BaseCosmosDBRepository(Container cosmosContainer, ICosmosDbRepositoryLogger log)
         {
+            Logger = log;
             container = cosmosContainer ?? throw new ArgumentNullException(nameof(cosmosContainer));
         }
 
@@ -49,7 +51,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;  //let the caller handle this as appropriate
             }
         }
@@ -75,7 +77,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;  //let the caller handle this as appropriate
             }
         }
@@ -89,7 +91,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;  //let the caller handle this as appropriate
             }
         }
@@ -102,7 +104,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;  //let the caller handle this as appropriate
             }
         }

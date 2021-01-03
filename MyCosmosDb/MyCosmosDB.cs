@@ -7,9 +7,11 @@ namespace MyCosmosDb
     public class MyCosmosDB : BaseCosmosDB
     {
         private Container MainContainer;
+        private ICosmosDbRepositoryLogger Logger;
         
-        public MyCosmosDB(string endPointUri, string primaryKey)
+        public MyCosmosDB(string endPointUri, string primaryKey, ICosmosDbRepositoryLogger log) : base(log)
         {
+            Logger = log;
             var desc = new MyCosmosDbDescriptor();
             Init(endPointUri, primaryKey, desc).Wait();
             MainContainer = Containers.FirstOrDefault();
@@ -17,7 +19,7 @@ namespace MyCosmosDb
 
         public MyFamilyRepository GetFamilyRepository()
         {
-            var repo = new MyFamilyRepository(MainContainer);
+            var repo = new MyFamilyRepository(MainContainer, Logger);
             return repo;
         }
     }

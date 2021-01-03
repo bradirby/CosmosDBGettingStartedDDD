@@ -16,7 +16,8 @@ namespace MyCosmosDb
 
     public class MyFamilyRepository : BaseCosmosDBRepository<Family>, IMyFamilyRepository
     {
-        public MyFamilyRepository(Container c) : base(c)
+        
+        public MyFamilyRepository(Container c, ICosmosDbRepositoryLogger log) : base(c, log)
         {
         }
 

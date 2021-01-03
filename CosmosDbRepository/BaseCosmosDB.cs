@@ -10,6 +10,12 @@ namespace CosmosDbRepository
         protected Database Database;
         protected List<Container> Containers = new List<Container>();
         protected ICosmosDbDescriptor Descriptor { get; set; }
+        private ICosmosDbRepositoryLogger Logger { get; set; }
+
+        public BaseCosmosDB(ICosmosDbRepositoryLogger log)
+        {
+            Logger = log;
+        }
 
         protected async Task Init(string endPointUri, string primaryKey, ICosmosDbDescriptor desc)
         {
@@ -32,7 +38,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;
             }
         }
@@ -46,7 +52,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;
             }
         }
@@ -62,7 +68,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;
             }
         }
@@ -75,7 +81,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;
             }
         }
@@ -89,7 +95,7 @@ namespace CosmosDbRepository
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                Logger?.WriteError(e, System.Reflection.MethodBase.GetCurrentMethod().Name);
                 throw;
             }
         }

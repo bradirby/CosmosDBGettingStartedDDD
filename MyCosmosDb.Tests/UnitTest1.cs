@@ -2,6 +2,7 @@ using System;
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
+using CosmosDbRepository;
 using NUnit.Framework;
 
 namespace MyCosmosDb.Tests
@@ -11,13 +12,14 @@ namespace MyCosmosDb.Tests
         private MyCosmosDB db;
         private IMyFamilyRepository FamRepo;
         private TestDataGenerator TstData = new TestDataGenerator();
+        private ICosmosDbRepositoryLogger Logger = new ConsoleLogger();
         
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
             var uri =  "https://localhost:8081";
             var primaryKey = "put your value here";
-            db = new MyCosmosDB(uri, primaryKey);
+            db = new MyCosmosDB(uri, primaryKey, Logger);
             FamRepo = db.GetFamilyRepository();
         }
 

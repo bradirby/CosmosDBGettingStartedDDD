@@ -21,13 +21,14 @@ namespace CosmosGettingStartedDDD
         /// </summary>
         private async Task GetStartedDemoAsync()
         {
+            var log = new ConsoleLogger();
             var tstData = new TestDataGenerator();
             var anderson1 = tstData.CreateAndersonFamily();
             var wakfield1 = tstData.CreateWakefieldFamily();
 
             //create the db
             Console.WriteLine($"{DateTime.Now} Starting");
-            var db = new MyCosmosDB(ConfigurationManager.AppSettings["EndPointUri"], ConfigurationManager.AppSettings["PrimaryKey"]);
+            var db = new MyCosmosDB(ConfigurationManager.AppSettings["EndPointUri"], ConfigurationManager.AppSettings["PrimaryKey"], log);
             Console.WriteLine($"{DateTime.Now} DB Created");
             var famRepo = db.GetFamilyRepository();
             Console.WriteLine($"{DateTime.Now} Repo Created");
