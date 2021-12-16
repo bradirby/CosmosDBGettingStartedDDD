@@ -5,21 +5,23 @@ using System.Threading.Tasks;
 using CosmosDbRepository;
 using NUnit.Framework;
 
-namespace MyCosmosDb.Tests
+namespace MySampleCosmosDb.Tests
 {
     public class Tests
     {
+
+        //to start, download the cosmosdb emulator from here: https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator?tabs=ssl-netstd21
         private MyCosmosDB db;
         private IMyFamilyRepository FamRepo;
-        private TestDataGenerator TstData = new TestDataGenerator();
-        private ICosmosDbRepositoryLogger Logger = new ConsoleLogger();
+        private readonly TestDataGenerator TstData = new TestDataGenerator();
         
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
+            //these come from the webpage that is displayed when you run the Cosmos local emulator
             var uri =  "https://localhost:8081";
-            var primaryKey = "put your value here";
-            db = new MyCosmosDB(uri, primaryKey, Logger);
+            var primaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+            db = new MyCosmosDB(uri, primaryKey);
             FamRepo = db.GetFamilyRepository();
         }
 

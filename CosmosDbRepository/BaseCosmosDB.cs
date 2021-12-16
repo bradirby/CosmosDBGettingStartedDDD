@@ -12,12 +12,12 @@ namespace CosmosDbRepository
         protected ICosmosDbDescriptor Descriptor { get; set; }
         private ICosmosDbRepositoryLogger Logger { get; set; }
 
-        public BaseCosmosDB(ICosmosDbRepositoryLogger log)
+        public BaseCosmosDB(ICosmosDbRepositoryLogger log = null)
         {
             Logger = log;
         }
 
-        protected async Task Init(string endPointUri, string primaryKey, ICosmosDbDescriptor desc)
+        protected async Task InitAsync(string endPointUri, string primaryKey, ICosmosDbDescriptor desc)
         {
             Descriptor = desc;
             var cosmosClient = await CreateClient(endPointUri, primaryKey, desc.ClientOptions);

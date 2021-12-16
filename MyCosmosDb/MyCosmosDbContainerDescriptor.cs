@@ -1,7 +1,6 @@
-﻿using BoundedContext;
-using CosmosDbRepository;
+﻿using CosmosDbRepository;
 
-namespace MyCosmosDb
+namespace MySampleCosmosDb
 {
     public class MyCosmosDbContainerDescriptor : ICosmosDbContainerDescriptor
     {
@@ -13,7 +12,7 @@ namespace MyCosmosDb
         {
             ContainerId = "items";
             ContainerThroughput = 500;
-            PartitionKeyPath = $"/{nameof(Family.LastName)}";
+            PartitionKeyPath = "LastName";
         }
 
     }

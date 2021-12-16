@@ -1,17 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosDbRepository", "CosmosDbRepository\CosmosDbRepository.csproj", "{F6FD4AA8-29F8-4032-92AB-9A2F93AD8B14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoundedContext", "BoundedContext\BoundedContext.csproj", "{65DF1D48-4BA7-4316-9648-7BA344E480C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySampleCosmosDb", "MyCosmosDb\MySampleCosmosDb.csproj", "{FAED372A-32DD-40BA-8A5F-8AD662BA0FB7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosGettingStartedDDD", "CosmosGettingStartedDDD\CosmosGettingStartedDDD.csproj", "{F744E17C-32D0-4BF2-8DED-9DE1B75AF1D9}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCosmosDb", "MyCosmosDb\MyCosmosDb.csproj", "{FAED372A-32DD-40BA-8A5F-8AD662BA0FB7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCosmosDb.Tests", "MyCosmosDb.Tests\MyCosmosDb.Tests.csproj", "{139A0970-5451-48CA-8B11-CCED8E4D7A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCosmosDb.UnitTests", "MyCosmosDb.Tests\MyCosmosDb.UnitTests.csproj", "{139A0970-5451-48CA-8B11-CCED8E4D7A60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,14 +19,6 @@ Global
 		{F6FD4AA8-29F8-4032-92AB-9A2F93AD8B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6FD4AA8-29F8-4032-92AB-9A2F93AD8B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6FD4AA8-29F8-4032-92AB-9A2F93AD8B14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65DF1D48-4BA7-4316-9648-7BA344E480C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65DF1D48-4BA7-4316-9648-7BA344E480C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65DF1D48-4BA7-4316-9648-7BA344E480C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65DF1D48-4BA7-4316-9648-7BA344E480C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F744E17C-32D0-4BF2-8DED-9DE1B75AF1D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F744E17C-32D0-4BF2-8DED-9DE1B75AF1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F744E17C-32D0-4BF2-8DED-9DE1B75AF1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F744E17C-32D0-4BF2-8DED-9DE1B75AF1D9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FAED372A-32DD-40BA-8A5F-8AD662BA0FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FAED372A-32DD-40BA-8A5F-8AD662BA0FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAED372A-32DD-40BA-8A5F-8AD662BA0FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU

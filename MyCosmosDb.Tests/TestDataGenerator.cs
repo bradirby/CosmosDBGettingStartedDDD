@@ -1,7 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-using BoundedContext;
 
-namespace MyCosmosDb.Tests
+namespace MySampleCosmosDb.Tests
 {
     public class TestDataGenerator
     {

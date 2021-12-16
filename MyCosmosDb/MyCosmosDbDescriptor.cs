@@ -2,7 +2,7 @@
 using CosmosDbRepository;
 using Microsoft.Azure.Cosmos;
 
-namespace MyCosmosDb
+namespace MySampleCosmosDb
 {
     public class MyCosmosDbDescriptor : ICosmosDbDescriptor
     {

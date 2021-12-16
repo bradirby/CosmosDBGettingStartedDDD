@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using BoundedContext;
 using CosmosDbRepository;
 using Microsoft.Azure.Cosmos;
 
-namespace MyCosmosDb
+namespace MySampleCosmosDb
 {
     public interface IMyFamilyRepository
     {
@@ -34,7 +33,7 @@ namespace MyCosmosDb
       
         public async Task<List<Family>> GetByLastName(string lastname)
         {
-            return await base.GetByFieldValueAsync(nameof(Family.LastName), lastname);
+            return await GetByFieldValueAsync(nameof(Family.LastName), lastname);
         }
 
     }

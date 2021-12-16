@@ -2,18 +2,18 @@
 using CosmosDbRepository;
 using Microsoft.Azure.Cosmos;
 
-namespace MyCosmosDb
+namespace MySampleCosmosDb
 {
     public class MyCosmosDB : BaseCosmosDB
     {
         private Container MainContainer;
         private ICosmosDbRepositoryLogger Logger;
         
-        public MyCosmosDB(string endPointUri, string primaryKey, ICosmosDbRepositoryLogger log) : base(log)
+        public MyCosmosDB(string endPointUri, string primaryKey, ICosmosDbRepositoryLogger log = null) : base(log)
         {
             Logger = log;
             var desc = new MyCosmosDbDescriptor();
-            Init(endPointUri, primaryKey, desc).Wait();
+            InitAsync(endPointUri, primaryKey, desc).GetAwaiter().GetResult();
             MainContainer = Containers.FirstOrDefault();
         }
 
